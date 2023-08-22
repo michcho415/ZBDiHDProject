@@ -28,6 +28,7 @@ def load_dataset():
     print(calories_steps.head())
 
     all = pd.merge(calories_steps, sleep, on=['Id', 'ActivityDay'])
-    print(all.head())
+    all = all.loc[all['Id'] == 1503960366] # select data only for 1 person
+    print(all)
     all.to_csv("caloriesStepsAndSleepInfo_merged.csv")
     return dataset

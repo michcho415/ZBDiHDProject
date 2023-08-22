@@ -17,7 +17,7 @@ async def root():
 @app.get("/apriori")
 async def apriori():
     dataset = load_dataset()
-    min_support = 0.01
+    min_support = 0.5
 
     frequent_itemsets = apriori_alg(dataset, min_support)
 
